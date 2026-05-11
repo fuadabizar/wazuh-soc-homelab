@@ -122,7 +122,6 @@ The following steps were completed during deployment:
 
 ### Wazuh Dashboard
 
-Add screenshot here:
 
 ![alt text](image.png)
 
@@ -130,7 +129,6 @@ Add screenshot here:
 
 ### Agent Connected
 
-Add screenshot here:
 
 ![alt text](image-1.png)
 
