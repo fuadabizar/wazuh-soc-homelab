@@ -23,22 +23,24 @@ This project was built to strengthen practical skills in:
 ## Architecture Overview
 
 ```text
-+----------------------+
-| Windows Endpoint     |
-| (Wazuh Agent)        |
-+----------+-----------+
-           |
-           v
-+----------------------+
-| Wazuh Manager        |
-| Ubuntu Server        |
-+----------+-----------+
-           |
-           v
-+----------------------+
-| Wazuh Dashboard      |
-| Monitoring & Alerts  |
-+----------------------+
++-----------------------------+
+| Windows 11 Host             |
+| - Wazuh Agent               |
+| - Windows Event Logs        |
++--------------+--------------+
+               |
+               v
++-----------------------------+
+| Ubuntu Environment          |
+| Docker Engine               |
++--------------+--------------+
+               |
+               v
++-----------------------------+
+| Wazuh Manager Container     |
+| Wazuh Indexer Container     |
+| Wazuh Dashboard Container   |
++-----------------------------+
 ```
 
 ---
@@ -48,12 +50,13 @@ This project was built to strengthen practical skills in:
 | Component | Details |
 |------------|---------|
 | Host OS | Windows 11 |
-| Virtualization | VirtualBox |
-| Guest OS | Ubuntu Server |
+| Linux Environment | Ubuntu on WSL |
+| Containerization | Docker Engine |
 | SIEM Platform | Wazuh |
-| Endpoint Monitoring | Windows Agent |
-| Purpose | Security Monitoring Homelab |
-
+| Deployment Method | Docker-based Wazuh deployment |
+| Endpoint Monitoring | Windows Wazuh Agent |
+| Monitored Endpoint | Windows 11 |
+| Purpose | Security Monitoring and Detection Engineering Homelab |
 ---
 
 ## Features Implemented
