@@ -107,17 +107,34 @@ Identify failed authentication attempts for security monitoring and investigatio
 
 ## Deployment Process
 
-The following steps were completed during deployment:
+This project was deployed using a Docker-based Wazuh setup from an Ubuntu environment on a Windows 11 host.
 
-1. Installed VirtualBox environment
-2. Created Ubuntu Server VM
-3. Installed Docker dependencies
-4. Deployed Wazuh stack
-5. Configured Wazuh Dashboard
-6. Installed Windows Wazuh Agent
-7. Connected endpoint to manager
-8. Validated log ingestion
-9. Tested login failure detection
+### 1. Environment Preparation
+- Prepared Ubuntu environment on Windows
+- Installed Docker Engine and Docker Compose dependencies
+- Verified Docker service and container runtime
+
+### 2. Wazuh Stack Deployment
+- Deployed Wazuh Manager, Wazuh Indexer, and Wazuh Dashboard using Docker
+- Verified all Wazuh containers were running properly
+- Accessed the Wazuh Dashboard through localhost
+
+### 3. Endpoint Integration
+- Installed the Wazuh Agent on the Windows endpoint
+- Connected the Windows endpoint to the Wazuh Manager
+- Verified agent status from the Wazuh Dashboard
+
+### 4. Log Ingestion Validation
+- Validated Windows Event Log collection
+- Confirmed authentication-related logs were ingested into Wazuh
+- Tested failed login telemetry using Windows Event ID 4625
+
+### 5. Detection Engineering
+- Created a custom detection rule for Windows failed login events
+- Created a brute-force detection rule for 5 failed logins within 120 seconds
+- Created a correlation rule for successful login after multiple failed attempts
+- Mapped detections to MITRE ATT&CK techniques
+- Validated alerts through controlled testing
 
 ---
 
