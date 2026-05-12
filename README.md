@@ -123,22 +123,43 @@ The following steps were completed during deployment:
 ### Wazuh Dashboard
 
 
-![alt text](image.png)
+![alt text](./screenshots/dashboard.png)
 
 ---
 
 ### Agent Connected
 
 
-![alt text](image-1.png)
+![alt text](./screenshots/active-agent.png)
 
 ---
 
 ### Login Failure Alert Detection
 
-![alt text](image-2.png)
+![alt text](./screenshots/login-failure-alert.png)
 
 ---
+
+## Implemented Detections
+
+### Windows Failed Login Detection (Event ID 4625)
+
+Detects Windows failed authentication attempts.
+
+**Rule ID:** `60122`
+
+![Failed Login Detection](./screenshots/login-failure-alert.png)
+
+---
+
+### Brute Force Detection
+
+Detects 5 failed login attempts within 120 seconds.
+
+**Rule ID:** `100500`  
+**MITRE ATT&CK:** `T1110 - Brute Force`
+
+![Brute Force Detection](./screenshots/bruteforce-alert.png)
 
 ## Challenges & Troubleshooting
 
